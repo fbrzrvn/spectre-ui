@@ -37,7 +37,8 @@ export default defineConfig((configEnv) => {
       preprocessorOptions: {
         scss: {
           additionalData: `
-          @use "sass:color";
+            @use "sass:color";
+            @use 'src/assets/styles/abstracts/' as *;
           `,
         },
       },
