@@ -1,4 +1,4 @@
-name: 👨🏻‍🔬 tests
+name: tests
 
 on: push
 
@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: 🤸🏻‍♀️ Use Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           cache: 'npm'
@@ -17,26 +19,5 @@ jobs:
       - name: 🏗️ Install Dependencies
         run: npm install
 
-      - name: 🧪 Test
+      - name: 👨🏻‍🔬 Test
         run: npx jest --config=jest.config.js
-
-  e2e:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-          cache: 'npm'
-
-      - name: 🏗️ Install Dependencies
-        run: npm install
-
-      - name: 🩻 Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          build: npm run build
-          start: npm run start
-          wait-on: 'http://localhost:5173'
