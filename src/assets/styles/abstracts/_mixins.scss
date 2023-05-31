@@ -1,0 +1,44 @@
+/* Layout
+   ========================================================================== */
+
+@mixin flex($dir: row, $ai: center, $jc: center, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  gap: $gap;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+/* Position
+   ========================================================================== */
+
+@mixin position($pos, $top: unset, $right: unset, $bottom: unset, $left: unset) {
+  position: $pos;
+  inset: $top $right $bottom $left;
+}
+
+@mixin center($pos, $type) {
+  position: $pos;
+
+  @if $type == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  @if $type == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+
+  @if $type == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
