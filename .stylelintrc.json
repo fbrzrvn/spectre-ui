@@ -8,7 +8,7 @@
     }
   ],
   "rules": {
-    "at-rule-empty-line-before": ["always", { "except": ["blockless-after-same-name-blockless"] }],
+    "at-rule-empty-line-before": ["always", { "except": ["blockless-after-same-name-blockless", "first-nested"] }],
     "color-hex-length": "long",
     "property-no-vendor-prefix": null,
     "scss/at-function-pattern": "[a-z-]+",
