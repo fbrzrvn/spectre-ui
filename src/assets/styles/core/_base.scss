@@ -1,31 +1,27 @@
 @use '../abstracts/' as *;
 
 :root {
-  font-weight: 400;
-  font-size: 1rem;
-  font-family: $base-font-family;
-  line-height: 1.5;
-  font-synthesis: none;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-size-adjust: 100%;
+  @each $name, $value in $vars {
+    --#{$name}: #{$value};
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+html,
 body {
   max-width: 1280px;
   min-height: 100vh;
   margin: 0 auto;
   color: $dark-color;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: $base-font-family;
+  line-height: 1.5;
   background-color: $light-color;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -76,25 +72,49 @@ h6 {
   font-size: 1rem;
 }
 
-p {
-  margin: 0 0 1rem;
-}
-
 code {
   font-family: $mono-font-family;
 }
 
-// Semantic text elements
 a,
 ins,
 u {
   text-decoration-skip: ink edges;
 }
 
-img {
-  display: block;
-  width: auto;
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+input:read-only {
+  cursor: default;
+}
+
+input:disabled,
+textarea:disabled,
+button:disabled,
+option:disabled,
+optgroup:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
+abbr[title] {
+  cursor: help;
+}
+
+img,
+video {
   max-width: 100%;
   height: auto;
-  max-height: 100%;
+  vertical-align: middle;
 }

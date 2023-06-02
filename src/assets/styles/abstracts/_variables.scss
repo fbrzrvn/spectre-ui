@@ -1,7 +1,3 @@
-// FONTS
-$base-font-family: -apple-system, system-ui, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !default;
-$mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier', monospace !default;
-
 // COLORS
 $primary-color: #0066cc !default;
 
@@ -13,4 +9,29 @@ $light-color: #ffffff !default;
 $info-color: #009ddc !default;
 $success-color: #61bb46 !default;
 $warning-color: #fdb827 !default;
-$error-color: #e03a3e !default;
+$danger-color: #e03a3e !default;
+
+// FONTS
+$base-font-family: -apple-system, system-ui, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !default;
+$mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier', monospace !default;
+
+// MAP VARIABLES
+$vars: (
+  base-font: $base-font-family,
+  mono-font: $mono-font-family,
+  primary-color: $primary-color,
+  light-color: $light-color,
+  dark-color: $dark-color,
+  info-color: $info-color,
+  success-color: $success-color,
+  warning-color: $warning-color,
+  danger-color: $danger-color,
+) !default;
+
+// MAP STATUS COLOR
+$status-color: (
+  info: $info-color,
+  success: $success-color,
+  warning: $warning-color,
+  danger: $danger-color,
+);
