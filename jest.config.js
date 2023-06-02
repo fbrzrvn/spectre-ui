@@ -1,7 +1,7 @@
 export default {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/tests/setupTests.ts'],
-  testMatch: ['<rootDir>/tests/**/*.(spec).(ts|tsx)'],
+  testMatch: ['<rootDir>/**/*.(spec).(ts|tsx)'],
   testPathIgnorePatterns: ['<rootDir>/tests/e2e/'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': [
@@ -26,7 +26,6 @@ export default {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': 'jest-transform-stub',
     '~/(.*)': '<rootDir>/src/$1',
-    'tests/(.*)': '<rootDir>/tests/$1',
   },
   collectCoverageFrom: ['./src/**'],
   verbose: true,
