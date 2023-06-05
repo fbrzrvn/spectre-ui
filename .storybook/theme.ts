@@ -11,8 +11,8 @@ const baseTheme: Omit<ThemeVars, 'base'> = {
   brandImage: '',
   brandTarget: '_blank',
 
-  colorPrimary: '#0066cc',
-  colorSecondary: '#0066cc',
+  colorPrimary: '#805AD5',
+  colorSecondary: '#805AD5',
 }
 
 const lightTheme: ThemeVars = {
@@ -20,10 +20,10 @@ const lightTheme: ThemeVars = {
   ...baseTheme,
 
   // Text colors
-  textColor: '#1d1d1f',
+  textColor: '#212529',
 
   // Toolbar colors
-  barTextColor: '#1d1d1f',
+  barTextColor: '#101418',
 }
 
 export default create(lightTheme)
