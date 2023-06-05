@@ -1,7 +1,6 @@
 {
-  "name": "spectre-ui",
-  "description": "Spectre UI components library for React",
-  "private": true,
+  "name": "@fab-rvn/spectre-ui",
+  "description": "Spectre UI is an open source project for creating strong user interfaces with high quality web components for React",
   "version": "0.0.0",
   "title": "Spectre UI",
   "keywords": [
@@ -105,5 +104,8 @@
     "name": "fab-rvn",
     "email": "fabri.es018@gmail.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
