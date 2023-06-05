@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/images/spectre.png" width="80" />
+  <img src="public/spectre.svg" alt="spectre" width="100" />
   <br>
   <h1>spectre-ui</h1>
 </div>
