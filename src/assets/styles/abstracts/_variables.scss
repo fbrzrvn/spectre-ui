@@ -1,37 +1,72 @@
-// COLORS
-$primary-color: #0066cc !default;
+/* Colors
+   ========================================================================== */
+$color-primary: #805ad5 !default;
 
-// neutrals colors
-$dark-color: #1d1d1f !default;
-$light-color: #ffffff !default;
+/**
+ * Neutrals
+ */
+$color-dark: #101418 !default;
+$color-light: #ffffff !default;
+$color-gray-100: #f8f9fa !default;
+$color-gray-200: #e9ecef !default;
+$color-gray-300: #dee2e6 !default;
+$color-gray-400: #ced4da !default;
+$color-gray-500: #adb5bd !default;
+$color-gray-600: #6c757d !default;
+$color-gray-700: #495057 !default;
+$color-gray-800: #343a40 !default;
+$color-gray-900: #212529 !default;
 
-// status colors
-$info-color: #009ddc !default;
-$success-color: #61bb46 !default;
-$warning-color: #fdb827 !default;
-$danger-color: #e03a3e !default;
+/**
+ * State colors
+ */
+$color-info: #0dcaf0 !default;
+$color-success: #198754 !default;
+$color-warning: #ffc107 !default;
+$color-danger: #dc3545 !default;
 
-// FONTS
+/* Font
+   ========================================================================== */
 $base-font-family: -apple-system, system-ui, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !default;
+$body-font-weight: 400 !default;
+$body-font-family: $base-font-family !default;
+$body-font-size: 1rem !default;
+$body-line-height: 1.5 !default;
+$headings-font-weight: 500 !default;
+$headings-font-family: $base-font-family !default;
+$headings-line-height: 1.2 !default;
 $mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier', monospace !default;
 
-// MAP VARIABLES
-$vars: (
-  base-font: $base-font-family,
-  mono-font: $mono-font-family,
-  primary-color: $primary-color,
-  light-color: $light-color,
-  dark-color: $dark-color,
-  info-color: $info-color,
-  success-color: $success-color,
-  warning-color: $warning-color,
-  danger-color: $danger-color,
-) !default;
+/* Maps
+   ========================================================================== */
 
-// MAP STATUS COLOR
-$status-color: (
-  info: $info-color,
-  success: $success-color,
-  warning: $warning-color,
-  danger: $danger-color,
+/**
+ * Variables
+ */
+$vars: (
+  body-font-family: $body-font-family,
+  body-font-weight: $body-font-weight,
+  body-font-size: $body-font-size,
+  body-line-height: $body-line-height,
+  heading-font-family: $headings-font-family,
+  headings-font-weight: $headings-font-weight,
+  headings-line-height: $headings-line-height,
+  mono-font: $mono-font-family,
+  color-primary: $color-primary,
+  color-dark: $color-dark,
+  color-light: $color-light,
+  color-info: $color-info,
+  color-success: $color-success,
+  color-warning: $color-warning,
+  color-danger: $color-danger,
+);
+
+/**
+ * State colors
+ */
+$state-colors: (
+  info: $color-info,
+  success: $color-success,
+  warning: $color-warning,
+  danger: $color-danger,
 );
