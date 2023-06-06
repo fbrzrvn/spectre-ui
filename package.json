@@ -37,7 +37,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "new-component": "bash script.sh"
   },
   "dependencies": {
     "react": "^18.2.0",

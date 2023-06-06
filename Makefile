@@ -28,3 +28,7 @@ lint-fix:
 .PHONY: sb
 sb:
 	npm run storybook
+
+.PHONY: new-component
+new-component:
+	bash script.sh $(name)
