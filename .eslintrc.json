@@ -27,6 +27,11 @@
             "pattern": "~/*",
             "group": "internal",
             "position": "after"
+          },
+          {
+            "pattern": "~tests/*",
+            "group": "internal",
+            "position": "before"
           }
         ],
         "distinctGroup": false,
