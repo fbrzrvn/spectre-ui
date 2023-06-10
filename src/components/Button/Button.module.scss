@@ -1,0 +1,121 @@
+%button {
+  @include flex($gap: 8px);
+
+  height: auto;
+  padding: 1em;
+  font-weight: 600;
+  font-size: $body-font-size;
+  font-family: $body-font-family;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-radius: 0.375em;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+  user-select: none;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  & svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+
+@each $name, $color in $state-colors {
+  .#{$name} {
+    &.ghost {
+      @extend %button;
+
+      color: #{$color};
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      @include hover {
+        background-color: rgba($color, 0.12);
+      }
+    }
+
+    &.solid {
+      @extend %button;
+
+      color: $color-light;
+      background-color: #{$color};
+      border: 1px solid #{$color};
+
+      @if $name == 'info' or $name == 'warning' {
+        color: $color-gray-900;
+      }
+
+      @include hover {
+        background-color: color.adjust($color, $lightness: 5%);
+      }
+    }
+
+    &.outline {
+      @extend %button;
+
+      color: #{$color};
+      background-color: transparent;
+      border: 1px solid #{$color};
+
+      @include hover {
+        color: $color-light;
+        background-color: rgba($color, 0.1);
+        background-color: $color;
+
+        @if $name == 'info' or $name == 'warning' {
+          color: $color-gray-900;
+        }
+      }
+    }
+
+    &.link {
+      @extend %button;
+
+      color: #{$color};
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.sm {
+      min-width: 2rem;
+      height: 2rem;
+      font-size: 0.875rem;
+    }
+
+    &.md {
+      min-width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+
+    &.lg {
+      min-width: 3rem;
+      height: 3rem;
+      font-size: 1.125rem;
+    }
+
+    &.is-icon-button {
+      padding: 0;
+
+      & svg {
+        width: 2em;
+        height: 2em;
+      }
+    }
+  }
+}
