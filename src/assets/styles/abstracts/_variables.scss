@@ -44,6 +44,13 @@ $mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier'
  * Variables
  */
 $vars: (
+  color-primary: $color-primary,
+  color-dark: $color-dark,
+  color-light: $color-light,
+  color-info: $color-info,
+  color-success: $color-success,
+  color-warning: $color-warning,
+  color-danger: $color-danger,
   body-font-family: $body-font-family,
   body-font-weight: $body-font-weight,
   body-font-size: $body-font-size,
@@ -52,19 +59,14 @@ $vars: (
   headings-font-weight: $headings-font-weight,
   headings-line-height: $headings-line-height,
   mono-font: $mono-font-family,
-  color-primary: $color-primary,
-  color-dark: $color-dark,
-  color-light: $color-light,
-  color-info: $color-info,
-  color-success: $color-success,
-  color-warning: $color-warning,
-  color-danger: $color-danger,
 );
 
 /**
  * State colors
  */
 $state-colors: (
+  primary: $color-primary,
+  secondary: $color-gray-600,
   info: $color-info,
   success: $color-success,
   warning: $color-warning,
