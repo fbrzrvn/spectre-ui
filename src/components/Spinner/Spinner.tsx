@@ -12,13 +12,13 @@ export interface SpinnerProps extends React.HTMLAttributes<HTMLElement> {
    */
   emptyColor?: string
   /**
-   * For accessibility, it's important to add a fallback loading text.
-   * This text will be visible to screen readers.
+   * For accessibility, it's important to add a fallback loading text
+   * This text will be visible to screen readers
    * @default "Loading..."
    */
   label?: string
   /**
-   * The speed of the spinner.
+   * The speed of the spinner
    * @default "0.7s"
    * @example
    * ```jsx
@@ -26,6 +26,11 @@ export interface SpinnerProps extends React.HTMLAttributes<HTMLElement> {
    * ```
    */
   speed?: string
+  /**
+   * The size of the spinner
+   * @default "md"
+   */
+  size?: 'sm' | 'md' | 'lg'
   /**
    * The thickness of the spinner
    * @default "2px"
@@ -39,10 +44,11 @@ export interface SpinnerProps extends React.HTMLAttributes<HTMLElement> {
 
 export const Spinner = ({
   color = '#dee2e6',
-  emptyColor = 'transparent',
+  emptyColor,
   label = 'Loading...',
-  speed = '0.75s',
-  thickness = '2px',
+  speed,
+  size = 'md',
+  thickness,
   ...rest
 }: SpinnerProps) => {
   const spinnerStyles = {
@@ -52,9 +58,10 @@ export const Spinner = ({
     animationDuration: speed,
     ...styles,
   }
+
   return (
     <div
-      className={styles.spinner}
+      className={`${styles.spinner} ${styles[size]}`}
       aria-label={label}
       aria-live="polite"
       role="status"

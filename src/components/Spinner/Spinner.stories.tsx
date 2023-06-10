@@ -22,3 +22,40 @@ const Template: Story = {
 export const Default: Story = {
   ...Template,
 }
+
+export const Large: Story = {
+  ...Template,
+  args: {
+    size: 'lg',
+  },
+}
+
+export const Medium: Story = {
+  ...Template,
+  args: {
+    size: 'md',
+  },
+}
+
+export const Small: Story = {
+  ...Template,
+  args: {
+    size: 'sm',
+  },
+}
+
+export const WithColor: Story = {
+  ...Template,
+  args: {
+    color: '#805ad5',
+  },
+}
+
+export const WithEmptyAreaColor: Story = {
+  ...Template,
+  args: {
+    emptyColor: '#805ad5',
+    size: 'lg',
+    thickness: '4px',
+  },
+}

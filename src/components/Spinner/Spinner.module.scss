@@ -1,7 +1,5 @@
 .spinner {
   display: inline-block;
-  width: 32px;
-  height: 32px;
   overflow: hidden;
   vertical-align: top;
   border-color: currentcolor;
@@ -12,6 +10,21 @@
   cursor: progress;
   transition: all 200ms ease-out;
   animation: spin 0.7s linear infinite;
+
+  &.sm {
+    width: 1em;
+    height: 1em;
+  }
+
+  &.md {
+    width: 2em;
+    height: 2em;
+  }
+
+  &.lg {
+    width: 4em;
+    height: 4em;
+  }
 }
 
 @keyframes spin {
