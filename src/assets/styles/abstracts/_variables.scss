@@ -1,10 +1,7 @@
+@use 'sass:color';
+
 /* Colors
    ========================================================================== */
-$color-primary: #805ad5 !default;
-
-/**
- * Neutrals
- */
 $color-dark: #101418 !default;
 $color-light: #ffffff !default;
 $color-gray-100: #f8f9fa !default;
@@ -16,26 +13,87 @@ $color-gray-600: #6c757d !default;
 $color-gray-700: #495057 !default;
 $color-gray-800: #343a40 !default;
 $color-gray-900: #212529 !default;
-
-/**
- * State colors
- */
+$color-primary: #8059d4 !default;
+$color-primary-light: #9f81e4 !default;
+$color-secondary: $color-gray-600 !default;
+$color-secondary-light: #8b9196 !default;
 $color-info: #0dcaf0 !default;
+$color-info-light: #39d4f1 !default;
 $color-success: #198754 !default;
+$color-success-light: #33986a !default;
 $color-warning: #ffc107 !default;
+$color-warning-light: #ffce3d !default;
 $color-danger: #dc3545 !default;
+$color-danger-light: #f25b69 !default;
 
 /* Font
    ========================================================================== */
+$root-font-size: 16px !default;
+$base-font-size: 1rem !default;
 $base-font-family: -apple-system, system-ui, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !default;
-$body-font-weight: 400 !default;
 $body-font-family: $base-font-family !default;
-$body-font-size: 1rem !default;
+$body-font-size: $base-font-size !default;
+$body-font-weight: 400 !default;
 $body-line-height: 1.5 !default;
-$headings-font-weight: 500 !default;
+$font-size-sm: $base-font-size * 0.875 !default;
+$font-size-lg: $base-font-size * 1.25 !default;
+$h1-font-size: $base-font-size * 2.5 !default;
+$h2-font-size: $base-font-size * 2 !default;
+$h3-font-size: $base-font-size * 1.75 !default;
+$h4-font-size: $base-font-size * 1.5 !default;
+$h5-font-size: $base-font-size * 1.25 !default;
+$h6-font-size: $base-font-size !default;
 $headings-font-family: $base-font-family !default;
+$headings-font-weight: 500 !default;
 $headings-line-height: 1.2 !default;
 $mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier', monospace !default;
+
+/* Components
+   ========================================================================== */
+
+/**
+ * Button
+ */
+$button-font-weight: 600 !default;
+$button-line-height: 1em !default;
+$button-padding: 1em !default;
+$button-border-radius: 0.375em !default;
+$button-primary-solid-hover: $color-primary-light !default;
+$button-secondary-solid-hover: $color-secondary-light !default;
+$button-info-solid-hover: $color-info-light !default;
+$button-success-solid-hover: $color-success-light !default;
+$button-warning-solid-hover: $color-warning-light !default;
+$button-danger-solid-hover: $color-danger-light !default;
+
+/**
+ * Link
+ */
+$link-color: $color-primary !default;
+$link-color-hover: color.adjust($link-color, $saturation: 20%) !default;
+$link-decoration: none !default;
+$link-decoration-hover: underline !default;
+
+/**
+ * Spacer
+ */
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+/**
+ * Transitions
+ */
+$transition-base: all 200ms ease-in-out !default;
+
+/* Prefix for :root CSS variables
+   ========================================================================== */
+$prefix: --sp- !default;
 
 /* Maps
    ========================================================================== */
@@ -44,21 +102,54 @@ $mono-font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Menlo', 'Courier'
  * Variables
  */
 $vars: (
-  color-primary: $color-primary,
   color-dark: $color-dark,
   color-light: $color-light,
+  color-gray-100: $color-gray-100,
+  color-gray-200: $color-gray-200,
+  color-gray-300: $color-gray-300,
+  color-gray-400: $color-gray-400,
+  color-gray-500: $color-gray-500,
+  color-gray-600: $color-gray-600,
+  color-gray-700: $color-gray-700,
+  color-gray-800: $color-gray-800,
+  color-gray-900: $color-gray-900,
+  color-primary: $color-primary,
+  color-secondary: $color-secondary,
   color-info: $color-info,
   color-success: $color-success,
   color-warning: $color-warning,
   color-danger: $color-danger,
   body-font-family: $body-font-family,
-  body-font-weight: $body-font-weight,
   body-font-size: $body-font-size,
+  body-font-weight: $body-font-weight,
   body-line-height: $body-line-height,
   heading-font-family: $headings-font-family,
   headings-font-weight: $headings-font-weight,
   headings-line-height: $headings-line-height,
-  mono-font: $mono-font-family,
+  h1-font-size: $h1-font-size,
+  h2-font-size: $h2-font-size,
+  h3-font-size: $h3-font-size,
+  h4-font-size: $h4-font-size,
+  h5-font-size: $h5-font-size,
+  h6-font-size: $h6-font-size,
+  mono-font-family: $mono-font-family,
+  font-size-sm: $font-size-sm,
+  font-size-lg: $font-size-lg,
+  button-font-weight: $button-font-weight,
+  button-line-height: $button-line-height,
+  button-padding: $button-padding,
+  button-border-radius: $button-border-radius,
+  button-primary-solid-hover: $button-primary-solid-hover,
+  button-secondary-solid-hover: $button-secondary-solid-hover,
+  button-info-solid-hover: $button-info-solid-hover,
+  button-success-solid-hover: $button-success-solid-hover,
+  button-warning-solid-hover: $button-warning-solid-hover,
+  button-danger-solid-hover: $button-danger-solid-hover,
+  link-color: $link-color,
+  link-color-hover: $link-color-hover,
+  link-decoration: $link-decoration,
+  link-decoration-hover: $link-decoration-hover,
+  transition-base: $transition-base,
 );
 
 /**
@@ -66,7 +157,7 @@ $vars: (
  */
 $state-colors: (
   primary: $color-primary,
-  secondary: $color-gray-600,
+  secondary: $color-secondary,
   info: $color-info,
   success: $color-success,
   warning: $color-warning,
