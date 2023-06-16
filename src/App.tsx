@@ -1,4 +1,5 @@
 import styles from '~/App.module.scss'
+import {} from '~/components'
 
 function App() {
   return (
