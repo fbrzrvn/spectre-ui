@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
-import { testA11y } from '~tests/utils'
+import { testA11y } from '~tests/test-utils'
 import { Spinner } from '~/components'
 
 test('Passes a11y test', async () => {
