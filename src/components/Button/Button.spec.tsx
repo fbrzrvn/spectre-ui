@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { testA11y } from '~tests/utils'
+import { testA11y } from '~tests/test-utils'
 import { Button } from '~/components'
 
 test('Passes a11y test', async () => {
@@ -35,6 +35,14 @@ test('Shows spinner and loading text when isLoading and loadingText', async () =
   // children text is replace by `LoadingText`
   expect(screen.queryByText(/Click me/i)).toBeNull()
   expect(button).toHaveTextContent(/Loading/i)
+})
+
+test('Should have`data-loading` attribute when isLoading', async () => {
+  render(<Button isLoading>Click me</Button>)
+
+  const button = await screen.findByRole('button')
+
+  expect(button).toHaveAttribute('data-loading')
 })
 
 test('Should be disabled', async () => {

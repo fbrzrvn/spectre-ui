@@ -70,6 +70,7 @@ export const Button = ({
     <button
       className={classes}
       disabled={isDisabled || isLoading}
+      data-loading={isLoading}
       {...rest}
     >
       {isLoading && spinnerPlacement === 'start' && (
