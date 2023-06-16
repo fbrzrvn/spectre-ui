@@ -1,8 +1,10 @@
 @use '../abstracts/' as *;
 
 :root {
+  font-size: #{$root-font-size};
+
   @each $name, $value in $vars {
-    --sp-#{$name}: #{$value};
+    #{$prefix}#{$name}: #{$value};
   }
 }
 
@@ -17,12 +19,12 @@
 html,
 body {
   min-height: 100vh;
-  color: $color-gray-900;
-  font-weight: $body-font-weight;
-  font-size: $body-font-size;
-  font-family: $body-font-family;
-  line-height: $body-line-height;
-  background-color: $color-light;
+  color: var(#{$prefix}color-gray-900);
+  font-weight: var(#{$prefix}body-font-weight);
+  font-size: var(#{$prefix}body-font-size);
+  font-family: var(#{$prefix}body-font-family);
+  line-height: var(#{$prefix}body-line-height);
+  background-color: var(#{$prefix}color-light);
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,10 +47,10 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
-  color: $color-dark;
-  font-weight: $headings-font-weight;
-  font-family: $headings-font-family;
-  line-height: $headings-line-height;
+  color: var(#{$prefix}color-dark);
+  font-weight: var(#{$prefix}headings-font-weight);
+  font-family: var(#{$prefix}headings-font-family);
+  line-height: var(#{$prefix}headings-line-height);
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-word;
@@ -56,32 +58,32 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: var(#{$prefix}h1-font-size);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: var(#{$prefix}h2-font-size);
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: var(#{$prefix}h3-font-size);
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: var(#{$prefix}h4-font-size);
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: var(#{$prefix}h5-font-size);
 }
 
 h6 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(#{$prefix}h6-font-size);
 }
 
 code {
-  font-family: $mono-font-family;
+  font-family: var(#{$prefix}mono-font-family);
 }
 
 a,
@@ -91,11 +93,14 @@ u {
 }
 
 a {
-  color: $color-primary;
-  text-decoration: none;
+  color: var(#{$prefix}link-color);
+  font-weight: 600;
+  text-decoration: var(#{$prefix}link-decoration);
+  transition: var(#{$prefix}transition-base);
 
   &:hover {
-    text-decoration: underline;
+    color: var(#{$prefix}link-color-hover);
+    text-decoration: var(#{$prefix}link-decoration-hover);
   }
 }
 
