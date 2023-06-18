@@ -37,7 +37,7 @@ test('Shows spinner and loading text when isLoading and loadingText', async () =
   expect(button).toHaveTextContent(/Loading/i)
 })
 
-test('Should be disabled and have`aria-disabled` attribute when isDisabled', async () => {
+test('Should be disabled and have `aria-disabled` attribute when isDisabled', async () => {
   render(<Button isDisabled>Disabled button</Button>)
 
   const button = await screen.findByRole('button', { name: /Disabled button/i })
