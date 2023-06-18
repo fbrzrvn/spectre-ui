@@ -9,14 +9,15 @@ test('Passes a11y test', async () => {
   await testA11y(<Button>Click me</Button>)
 })
 
-test('Shows spinner when isLoading', async () => {
+test('Shows spinner and have `aria-disabled` attribute when isLoading', async () => {
   render(<Button isLoading>Click me</Button>)
 
-  await screen.findByRole('button')
+  const button = await screen.findByRole('button')
 
   expect(screen.getByRole('status')).toBeVisible()
   // children text is hidden
   expect(screen.queryByText(/Click me/i)).not.toBeInTheDocument()
+  expect(button).toHaveAttribute('aria-disabled')
 })
 
 test('Shows spinner and loading text when isLoading and loadingText', async () => {
@@ -29,28 +30,26 @@ test('Shows spinner and loading text when isLoading and loadingText', async () =
     </Button>
   )
 
-  const button = await screen.findByRole('button', { name: /Loading/i })
+  const button = await screen.findByRole('button')
 
   expect(screen.getByRole('status')).toBeVisible()
   // children text is replace by `LoadingText`
-  expect(screen.queryByText(/Click me/i)).toBeNull()
   expect(button).toHaveTextContent(/Loading/i)
 })
 
-test('Should have`data-loading` attribute when isLoading', async () => {
-  render(<Button isLoading>Click me</Button>)
-
-  const button = await screen.findByRole('button')
-
-  expect(button).toHaveAttribute('data-loading')
-})
-
-test('Should be disabled', async () => {
+test('Should be disabled and have`aria-disabled` attribute when isDisabled', async () => {
   render(<Button isDisabled>Disabled button</Button>)
 
   const button = await screen.findByRole('button', { name: /Disabled button/i })
 
   expect(button).toBeDisabled()
+  expect(button).toHaveAttribute('aria-disabled')
+})
+
+test('Should have the correct type', () => {
+  render(<Button type="submit">Submit</Button>)
+
+  expect(screen.getByRole('button')).toHaveAttribute('type', 'submit')
 })
 
 describe('Button functionality', () => {

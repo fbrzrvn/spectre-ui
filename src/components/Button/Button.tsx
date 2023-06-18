@@ -44,6 +44,10 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * @default "start"
    */
   spinnerPlacement?: 'start' | 'end'
+  /** The type attribute for the button
+   *  @default "button"
+   */
+  type?: 'submit' | 'button' | 'reset'
   /**
    * The variant of the Button
    * Use the variant prop to change the visual style of the Button
@@ -61,6 +65,7 @@ export const Button = ({
   loadingText,
   size = 'md',
   spinnerPlacement = 'start',
+  type = 'button',
   variant = 'ghost',
   ...rest
 }: ButtonProps) => {
@@ -68,9 +73,10 @@ export const Button = ({
 
   return (
     <button
+      type={type}
       className={classes}
       disabled={isDisabled || isLoading}
-      data-loading={isLoading}
+      aria-disabled={isDisabled || isLoading}
       {...rest}
     >
       {isLoading && spinnerPlacement === 'start' && (
