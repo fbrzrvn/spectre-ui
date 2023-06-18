@@ -30,12 +30,6 @@
   }
 }
 
-@mixin hover {
-  &:not([disabled]):hover {
-    @content;
-  }
-}
-
 @each $name, $color in $state-colors {
   .#{$name} {
     &.ghost {

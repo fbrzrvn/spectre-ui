@@ -42,3 +42,14 @@
     transform: translateY(-50%);
   }
 }
+
+/* Hover
+   ========================================================================== */
+
+@mixin hover {
+  @media (hover: hover) {
+    &:not([disabled]):hover {
+      @content;
+    }
+  }
+}
