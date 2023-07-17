@@ -6,10 +6,10 @@ import styles from './Button.module.scss'
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The visual color appearance of the component
-   * Use the colorScheme prop to change the color scheme of the Button
+   * Use the colorScheme prop to change the color scheme of the button
    * @default "primary"
    */
-  colorSheme?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+  colorScheme?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
   /**
    * If true, the button will be disabled
    * Pass the isDisabled prop to disabled the button
@@ -49,8 +49,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   type?: 'submit' | 'button' | 'reset'
   /**
-   * The variant of the Button
-   * Use the variant prop to change the visual style of the Button
+   * The variant of the button
+   * Use the variant prop to change the visual style of the button
    * @default "ghost"
    */
   variant?: 'ghost' | 'solid' | 'outline' | 'link'
@@ -58,7 +58,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export const Button = ({
   children,
-  colorSheme = 'primary',
+  colorScheme = 'primary',
   isDisabled,
   isIconButton,
   isLoading,
@@ -69,7 +69,7 @@ export const Button = ({
   variant = 'ghost',
   ...rest
 }: ButtonProps) => {
-  const classes = cx(styles[colorSheme], styles[size], styles[variant], isIconButton && styles['is-icon-button'])
+  const classes = cx(styles[colorScheme], styles[size], styles[variant], isIconButton && styles['is-icon-button'])
 
   return (
     <button
