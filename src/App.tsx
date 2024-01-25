@@ -11,7 +11,9 @@ function App() {
         </h3>
       </header>
 
-      <section className={styles.section}>{/* Drop your component here to start testing it */}</section>
+      <section className={styles.section}>
+        {/* Drop your component here to start testing it */}
+      </section>
     </main>
   )
 }
